@@ -70,8 +70,8 @@ private void startListening() {
     
     ```
     The permission in AndroidManifest.xml
-    ```xml
-    <activity
+```xml
+<activity
     android:name="..."
     ...>
   <intent-filter>
@@ -81,7 +81,7 @@ private void startListening() {
       android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" 
       android:resource="@xml/device_filter" />
 </activity>
-    ```
+```
    
 
 
