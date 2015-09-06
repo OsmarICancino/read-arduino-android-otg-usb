@@ -67,8 +67,7 @@ private void startListening() {
             lastString = "";
         }
     }
-    
-    ```
+```
     The permission in AndroidManifest.xml
 ```xml
 <activity
@@ -81,6 +80,23 @@ private void startListening() {
       android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" 
       android:resource="@xml/device_filter" />
 </activity>
+```
+    The file device_filter.xml
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 0x0403 / 0x6001: FTDI FT232R UART -->
+    <!-- 0x0403 / 0x6001: Arduino Demilanove -->
+    <usb-device vendor-id="1027" product-id="24577" />
+
+    <!-- 0x2341 / Arduino -->
+    <usb-device vendor-id="9025" />
+
+    <!-- 0x16C0 / 0x0483: Teensyduino  -->
+    <usb-device vendor-id="5824" product-id="1155" />
+
+</resources>
 ```
    
 
