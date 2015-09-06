@@ -5,11 +5,8 @@ As a first step , we open connection to the device , then you write a byte to th
 For the project we use the following library :
 https://github.com/mik3y/usb-serial-for-android
 
-Openning connection and settings the Arduino Shield:
-
-System.out.println("Hola Mundo");
-
-
+Openning connection and settings the Arduino Shield: <br>
+```java
 private void startListening() {
 
         mSerialDevice = UsbSerialProber.acquire(mUsbManager);
@@ -42,8 +39,12 @@ private void startListening() {
 
         onDeviceStateChange();
     }
+    ```
+
+
     
     And readding data:
+    ```java
     
     private final SerialInputOutputManager.Listener mListener =
             new SerialInputOutputManager.Listener() {
@@ -63,6 +64,7 @@ private void startListening() {
                     });
                 }
             };
+            ```
             .
 
 
