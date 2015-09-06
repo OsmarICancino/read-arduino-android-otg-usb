@@ -7,8 +7,11 @@ https://github.com/mik3y/usb-serial-for-android
 
 Openning connection and settings the Arduino Shield:
 
-private void startListening() 
-{
+System.out.println("Hola Mundo");
+
+
+private void startListening() {
+
         mSerialDevice = UsbSerialProber.acquire(mUsbManager);
         Toast.makeText(getApplicationContext(), "Resumed, mSerialDevice=" + mSerialDevice, Toast.LENGTH_SHORT).show();
         if (mSerialDevice == null)
