@@ -39,32 +39,6 @@ private void startListening() {
 
         onDeviceStateChange();
     }
-    ```
-
-
-    
-    And readding data:
-    ```java
-    
-    private final SerialInputOutputManager.Listener mListener =
-            new SerialInputOutputManager.Listener() {
-
-                @Override
-                public void onRunError(Exception e) {
-                    Log.d(TAG, "Runner stopped.");
-                }
-
-                @Override
-                public void onNewData(final byte[] data) {
-                    MainActivity.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            MainActivity.this.updateReceivedData(data);
-                        }
-                    });
-                }
-            };
-            ```
-            .
+   
 
 
