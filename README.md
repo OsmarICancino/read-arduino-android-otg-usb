@@ -39,6 +39,34 @@ private void startListening() {
 
         onDeviceStateChange();
     }
+    
+    //And Readding data 
+    private void updateReceivedData(byte[] data) {
+        String temp = new String(data);
+        boolean continuar = false;
+        if( temp.contains("=") && temp.contains(";") ) {
+            lastString = temp;
+            continuar = true;
+        } else if( temp.contains("=") )
+            lastString = temp;
+        else if( temp.contains(";") ) {
+            lastString = lastString!=null ? lastString + temp : temp;
+            if( lastString.contains("=")&&lastString.contains(";"))
+                continuar = true;
+        } else {
+            lastString = "";
+        }
+        if( continuar  ) {
+            String message = lastString;
+
+            if (message.contains("=") && message.contains(";"))
+                txtLectura.setText(message);
+            textEstado.setText(message);
+            textViewHumedad.setText(message.contains("=") + " " + message.contains(";"));
+            lastRead = null;
+            lastString = "";
+        }
+    }
    
 
 
