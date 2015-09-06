@@ -67,6 +67,21 @@ private void startListening() {
             lastString = "";
         }
     }
+    
+    ```
+    The permission in AndroidManifest.xml
+    ```xml
+    <activity
+    android:name="..."
+    ...>
+  <intent-filter>
+    <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+  </intent-filter>
+  <meta-data
+      android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" 
+      android:resource="@xml/device_filter" />
+</activity>
+    ```
    
 
 
